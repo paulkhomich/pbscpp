@@ -10,8 +10,8 @@ template <char ...c> struct TString {
     }
 };
 
-template <typename Char, Char ...c>
-constexpr auto operator"" _s() { return TString<c...>(); }
+template <typename Char, Char ...c> constexpr
+auto operator"" _s() { return TString<c...>(); }
 
 int main(int argc, const char * argv[]) {
     constexpr auto hello = "hello"_s + " world"_s;
